@@ -1,6 +1,6 @@
 <?php
 
-	require_once($_SERVER['DOCUMENT_ROOT']. 'cloud/modes/main/index.php');
+	require_once($_SERVER['DOCUMENT_ROOT'].'cloud/models/main/index.php');
 
 	Function betaSignup($email){
 
