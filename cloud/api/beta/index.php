@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 5473eb99b4dac31ab3beeac411694f6bbab15688
 	require_once($_SERVER['DOCUMENT_ROOT'].'cloud/models/beta/index.php');
 
 	extract($_REQUEST);
@@ -18,7 +22,11 @@
 			return;
 	}
 
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 5473eb99b4dac31ab3beeac411694f6bbab15688
 
 	switch($action){
 
@@ -40,9 +48,13 @@
 
 
 
+<<<<<<< HEAD
 ?>
 
 
 
 
 
+=======
+?>
+>>>>>>> 5473eb99b4dac31ab3beeac411694f6bbab15688

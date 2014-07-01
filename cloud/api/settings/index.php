@@ -12,6 +12,7 @@
 	//get the user's resuest
 	$inputArr = $_REQUEST;
 
+
 	//start the session... For seeing if a user is logged in
 	session_start();
 
