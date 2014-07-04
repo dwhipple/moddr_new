@@ -7,7 +7,7 @@
 	if(!isset($userN)){
 
 		$resp = array("status"=>"fail", "reason"=>"please send userN request header parameter")
-		echo(json_encode($resp));
+		echo(json_encode($resp));//this echo line turns it into json encoded version of this php coded array
 		return;  
 	}
 
@@ -28,8 +28,6 @@
 
 			case "addGet";
 				addGetChat($userN, $mes);
-
-				
 			break;
 	
 			default: 
