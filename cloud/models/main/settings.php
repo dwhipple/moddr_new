@@ -2,6 +2,6 @@
 
 $username= "admintIWgAdE";
 $dbPassword = "IGXGEuZAwibJ";
-$database= "marknad";
+$database= "marknadlean";
 
 ?>
