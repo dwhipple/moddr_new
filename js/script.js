@@ -399,8 +399,10 @@ $('.responsive-menu select').change(function() {
 
         $.ajax({
 
-            url:"cloud/api/beta",
-            data:{"email":email},
+            url:"cloud/api/beta?email"+email +"&action=signup",
+            data:{
+                "email":email
+            },
 
             complete:function(responseText){
             
