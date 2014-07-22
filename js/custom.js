@@ -1,76 +1,81 @@
-(function($) {
-	'use strict';
+// JavaScript Document
+(function(){
+  "use strict";
+//Banner height
+$(document).ready(function() {
+
+	var viewport_width = window.innerWidth;
+	var viewport_height = window.innerHeight;
+
+//Banner
+	$('.banner,.carousel .item').height((viewport_height));
+	$(window).resize(function() {
+	  var viewport_width = window.innerWidth;
+	  var viewport_height = window.innerHeight;
+		$('.banner,.carousel .item').height((viewport_height));
+	});
+	});
 	
-	/*
-	Smooth scroll
-	=========================== */
-	$('ul.navbar-nav li a, .btn-scroll').smoothScroll();
+//Page Smooth Scrolling
 
-	/*
-	Bounce animated
-	=========================== */	
-	$(".e_bounce").hover(
-		function () {
-		$(this).addClass("animated bounce");
-		},
-		function () {
-		$(this).removeClass("animated bounce");
-		}
-	);
+$(document).ready(function() {
+		$('ul.navi a').bind('click',function(event){
+			var $anchor = $(this);
 	
-	/*
-	tooltip
-	=========================== */
-	$('.tooltips').tooltip({
-		selector: "a[data-toggle^=tooltip]"
-	})
+			$('html, body').stop().animate({
+			scrollTop:( $($anchor.attr('href')).offset().top-0) 
+			}, 1500,'easeInOutExpo');
+                    /*
+                    if you don't want to use the easing effects:
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1000);
+                    */
+					event.preventDefault();
+					});
+			});
 
-	/* Client logo hover
-	=========================== */	
-	$(".logo-hover").css({'opacity':'0','filter':'alpha(opacity=0)'});	
-	$('.client-link').hover(function(){
-				$(this).find('.logo-hover').stop().fadeTo(900, 1);
-				$(this).find('.client-logo').stop().fadeTo(900, 0);
-	}, function() {
-				$(this).find('.logo-hover').stop().fadeTo(900, 0);
-				$(this).find('.client-logo').stop().fadeTo(900, 1);
-	});	
+//Opt-in Form
 
-	/*
-	Hover image
-	=========================== */		
-	$(".image-caption").css({'opacity':'0','filter':'alpha(opacity=0)'});
-	$('.image-wrapper').hover(
-		function() {
-			$(this).find('.image-caption').stop().fadeTo(800, 1);
-			$(".zoom", this).stop().animate({top:'38%'},{queue:false,duration:300});
-			$(".image-title", this).stop().animate({bottom:'40%'},{queue:false,duration:500});
-		},
-		function() {
-			$(this).find('.image-caption').stop().fadeTo(800, 0);
-			$(".zoom", this).stop().animate({top:'-38%'},{queue:false,duration:300});
-			$(".image-title", this).stop().animate({bottom:'-40%'},{queue:false,duration:500});
-		}
-	)
+$(document).ready(function(){
+ 
+$('#submit').click(function(){
 
-	/*
-	Team
-	=========================== */	
-	$(".team-profile").css({'opacity':'0','filter':'alpha(opacity=0)'});
-	$('.team-image-wrapper').hover(
-		function() {
-			$(this).find('.team-profile').stop().fadeTo(800, 1);
-			$(this).find('.team-image').stop().fadeTo(800, 0.4);
-		},
-		function() {
-			$(this).find('.team-profile').stop().fadeTo(800, 0);
-			$(this).find('.team-image').stop().fadeTo(800, 1);
-		}
-	)
+$.post("send.php", $("#contactform").serialize(),  function(response) {
+$('#message').html(response);
+$( "#message" ).show(1000);
+});
+return false;
+ 
+});	
+});
+
+//Contact Form
+
+$(document).ready(function(){
+ 
+$('#sendmsg').click(function(){
+
+$.post("contact.php", $("#contactmsg").serialize(),  function(response) {
+$('#contact-message').html(response);
+$( "#contact-message" ).show(1000);
+});
+return false;
+ 
+});	
+});			
+//Flexslider for testimonials
+	// Can also be used with $(document).ready()
+	$(window).load(function() {
+	 
+	  $('#testimonial').flexslider({
+		animation: "slide",
+		controlNav: true,
+		directionNav:false,
+		animationLoop: true,
+		slideshow: false,
 	
-	/*
-	cbpScroller
-	=========================== */		
-	new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );	
+	  });
+	});
 
-})(jQuery);
+		})();
