@@ -386,7 +386,37 @@ $('.responsive-menu select').change(function() {
 
     });
 
+
+
+
     
 });
+
+
+    function betaSignup(){
+
+        email = $('.signUp').val();
+        $('.signUp').val('Enter your email! ');
+
+        $.ajax({
+
+            url:"cloud/api/beta?email="+email + "&action=",
+            data:{"email":email
+        },
+        complete:function(){
+
+            $('.signUp').val("added ");
+        }
+
+        })
+    }
+
+
+
+
+
+
+
+
 
 
