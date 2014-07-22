@@ -395,20 +395,22 @@ $('.responsive-menu select').change(function() {
 
     function betaSignup(){
 
-        email = $('.signUp').val();
-        $('.signUp').val('Enter your email! ');
+        email = $('#signUp').val();
 
         $.ajax({
 
-            url:"cloud/api/beta?email="+email + "&action=",
-            data:{"email":email
-        },
-        complete:function(){
+            url:"cloud/api/beta",
+            data:{"email":email},
 
-            $('.signUp').val("added ");
-        }
+            complete:function(responseText){
+            
+                $('#signUp').val("added ");
 
+            }
         })
+
+
+       
     }
 
 
