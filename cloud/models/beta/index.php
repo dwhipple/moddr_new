@@ -5,7 +5,7 @@
 
 	function betaSignup($email){
 
-		dbQuery("INSERT INTO beta (email) VALUES ('$email')");
+		dbQuery("INSERT INTO betasignup (email) VALUES ('$email')");
 		$resp = array("status"=>"success", "reason"=>"beta user added");
 		return($resp);
 	}
