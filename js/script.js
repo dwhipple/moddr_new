@@ -395,7 +395,7 @@ $('.responsive-menu select').change(function() {
 
     function betaSignup(){
 
-        email = $('#signUp').val();
+        email = $('.rob').val();
 
         $.ajax({
 
@@ -406,7 +406,7 @@ $('.responsive-menu select').change(function() {
 
             complete:function(responseText){
             
-                $('#signUp').val("added ");
+                $('.rob').val("added ");
 
             }
         })
