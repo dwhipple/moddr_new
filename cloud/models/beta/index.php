@@ -3,11 +3,10 @@
 	//include main functionity (DB connect, etc)
 	require_once($_SERVER['DOCUMENT_ROOT'].'cloud/models/main/index.php');
 
-	function addGetChat($username, $mes){
+	function betaSignup(email){
 
-		dbQuery("INSERT INTO chat (username, message) VALUES ('$userN', '$mes')");
-		$chatHistory = dbMassData("SELECT * FROM chat ORDER BY timestamp DESC LIMIT 10")
-		$resp = array("status"=>"success", "reason"=>"chat added", "data"=> $chatHistory);
+		dbQuery("INSERT INTO beta (email) VALUES ('$email')");
+		$resp = array("status"=>"success", "reason"=>"beta user added");
 		return($resp);
 	}
 
